@@ -1023,6 +1023,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var successStatus = "success";
+var errorStatus = "error";
+
 var App = function (_Component) {
   _inherits(App, _Component);
 
@@ -1042,7 +1045,7 @@ var App = function (_Component) {
       highlightLine: 0,
       highlightingClass: _constants.highlightingClass,
       isSidebarOpen: false,
-      codeStatus: "success"
+      codeStatus: successStatus
     };
     _this.executeCode = _this.executeCode.bind(_this);
     _this.executeStepWise = _this.executeStepWise.bind(_this);
@@ -1210,7 +1213,7 @@ var App = function (_Component) {
       this.setState({
         registerTable: [], prints: [], stack: [],
         highlightLine: 0, highlightingClass: _constants.highlightingClass,
-        message: _constants.INITIALMESSAGE
+        message: _constants.INITIALMESSAGE, codeStatus: successStatus
       });
     }
   }, {
@@ -1271,7 +1274,7 @@ var App = function (_Component) {
         highlightLine: error.lineNumber,
         highlightingClass: _constants.highlightErrorClass,
         registerTable: [],
-        codeStatus: "error"
+        codeStatus: errorStatus
       });
     }
   }]);

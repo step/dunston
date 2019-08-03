@@ -346,13 +346,19 @@ div.CodeMirror-dragcursors {
 span.CodeMirror-selectedtext { background: none; }
 .code-container {
   border-right: #434343 solid 1px;
-  border-bottom: #434343 solid 1px; }
+  border-bottom: #434343 solid 1px;
+  position: relative; }
 
 .CodeMirror {
   background: transparent;
   font-family: inherit;
   color: #53759d;
   border-bottom: #434343 solid 1px; }
+
+.CodeMirror-cursor {
+  border-left: 1px solid #bea95f;
+  border-right: none;
+  width: 0; }
 
 .CodeMirror-gutter {
   background: #383838; }
@@ -448,7 +454,11 @@ tr {
   text-align: left;
   padding-left: 10px; }
 
+.stack-container {
+  overflow: auto; }
+
 .stack {
+  overflow: auto;
   margin: 0 5px;
   width: 100px; }
 
@@ -485,8 +495,97 @@ tr {
   grid-column-start: 1;
   grid-column-end: -1; }
 
+.assembly-simulator-header {
+  display: flex;
+  justify-content: space-between; }
+
+.save-load-container {
+  display: flex;
+  justify-content: space-around;
+  width: 10%; }
+
+.link-action {
+  text-decoration: none;
+  color: #bea95f; }
+
+.link-action:hover {
+  color: white;
+  cursor: pointer; }
+
 .lineToHighlight {
   background: #1f4085; }
 
 .errorLine {
   background-color: lightcoral; }
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  z-index: 100;
+  background-color: #282828;
+  overflow-x: hidden;
+  border-right: 2px solid #bea95f;
+  transition: width 0.5s;
+  padding: 0px 10px; }
+
+.sidebar-closed {
+  width: 0px;
+  padding: 0px;
+  border: none; }
+
+.sidebar-item-title {
+  font-size: 18px; }
+
+.sidebar-item-slider {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px; }
+
+.sidebar-item-slider input[type="range"] {
+  width: 70%; }
+
+.save-code-overlay {
+  height: 30%;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  border-radius: 3%;
+  background-color: #181b2e;
+  z-index: 1; }
+
+.save-button {
+  border: 0px;
+  font-size: inherit;
+  color: inherit;
+  background: inherit; }
+
+.save-button:hover {
+  color: white;
+  cursor: pointer; }
+
+.save-button:focus {
+  outline: none; }
+
+.filename-input {
+  height: 20%;
+  width: 70%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border: none;
+  border-bottom: 1px solid #bea95f;
+  background: inherit;
+  font-size: 15px;
+  color: #bea95f; }
+
+.filename-input:focus {
+  outline: none; }
+
+.save-dialogue-box-close-button {
+  position: relative;
+  top: 0%;
+  left: 45%; }
